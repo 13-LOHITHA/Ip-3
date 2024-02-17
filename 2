@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Internal CSS -->
+    <style>
+        /* Inline CSS */
+        #bookingForm {
+            display: none;
+            border: 2px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        #fixedImage {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        #fixedImage:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Inline CSS -->
+        <h1 style="text-align: center;">BookmyBus</h1>
+        <!-- Internal CSS -->
+        <div class="login-link" style="text-align: right;">
+            <a href="#" onclick="toggleBookingForm()">Signup/Login</a>
+        </div>
+    </header>
+
+    <section>
+        <!-- Internal CSS -->
+        <div id="services" style="position: fixed; top: 50px; left: 20px;">
+            <img src="seater.jpg" alt="Seater" id="serviceImage">
+        </div>
+        <!-- Internal CSS -->
+        <script>
+            // Javascript for changing service images
+            let images = ["seater.jpg", "sleeper.jpg", "semisleeper.jfif"];
+            let currentImageIndex = 0;
+            setInterval(function() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                document.getElementById("serviceImage").src = images[currentImageIndex];
+            }, 2000);
+        </script>
+    </section>
+
+    <section>
+        <!-- External CSS -->
+        <table class="features" border="1">
+            <tr>
+                <td><img src="feature1.jpg" alt="Feature 1"></td>
+                <td><img src="feature2.jpg" alt="Feature 2"></td>
+                <td><img src="feature3.jpg" alt="Feature 3"></td>
+            </tr>
+            <tr>
+                <td><img src="feature4.jpg" alt="Feature 4"></td>
+                <td><img src="feature5.jpg" alt="Feature 5"></td>
+                <td><img src="feature6.jpg" alt="Feature 6"></td>
+            </tr>
+        </table>
+        <!-- Internal CSS -->
+        <div id="bookingForm">
+            <h2>Bus Booking Form</h2>
+            <form>
+                <!-- Form fields go here -->
+            </form>
+        </div>
+    </section>
+
+    <!-- Fixed image with scrolling -->
+    <div id="fixedImage" onclick="scrollToBookingForm()">
+        <img src="booknow.jpg" alt="Book Now">
+    </div>
+
+    <!-- External CSS -->
+    <script src="script.js"></script>
+</body>
+</html>
